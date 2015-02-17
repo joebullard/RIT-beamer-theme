@@ -1,5 +1,7 @@
 Author: Joe Bullard
 
+#Description
+
 This repo contains an RIT color scheme for Beamer which can be used with any
 theme, as well as an actual stand-alone theme based on the standard PaltoAlto
 theme that comes with Beamer. The latter includes a convenience command for
@@ -21,3 +23,17 @@ under the following conditions:
 
 In other words, make sure you're usage complies with the above. I was using it
 for my thesis defense and conference slides, which was fine.
+
+#Usage
+
+To use the color scheme with whatever theme you want, simply put
+'beamercolorthemerit.sty' in your slide directory and add '\usecolortheme{rit}'
+AFTER your '\usetheme' command in the preamble.
+
+To use the PaltoAlto-based theme, simply place 'beamerthemeRIT.sty' in your
+slide directory and put '\usetheme{RIT}' in your preamble.
+
+NOTE: you do not need both files.
+
+If you want to use the '\useritlogo' command in the theme, then you also need
+to download the image, but note the info above about its usage.
