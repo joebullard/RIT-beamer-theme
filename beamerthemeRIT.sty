@@ -1,0 +1,82 @@
+% Original: Copyright 2007 by Till Tantau
+% Modified: Joe Bullard (2015)
+%
+% This is just the PaloAlto theme with my (Joe) RIT color scheme, a change
+% in the inner theme (to 'circles'), and a command for logo inclusion.
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+
+\DeclareOptionBeamer{hideothersubsections}{\PassOptionsToPackage{hideothersubsections=#1}{beamerouterthemesidebar}}
+\DeclareOptionBeamer{hideallsubsections}{\PassOptionsToPackage{hideallsubsections=#1}{beamerouterthemesidebar}}
+
+\DeclareOptionBeamer{width}{\PassOptionsToPackage{width=#1}{beamerouterthemesidebar}}
+\DeclareOptionBeamer{left}{\PassOptionsToPackage{left}{beamerouterthemesidebar}}
+\DeclareOptionBeamer{right}{\PassOptionsToPackage{right}{beamerouterthemesidebar}}
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+\useoutertheme{sidebar}
+\useinnertheme{circles}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The color code below is copied from 'beamercolorthemerit.sty'
+% so that this file can be used stand-alone.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Official RIT colors from website
+\definecolor{rit-orange}{HTML}{F36E21}
+\definecolor{rit-brown}{HTML}{513127}
+
+\setbeamercolor{structure}{fg=rit-orange,bg=rit-brown}
+
+%% General colors
+\setbeamercolor*{normal text}{use=structure,fg=structure.bg,bg=white}
+\setbeamercolor*{title}{use=structure,fg=structure.fg}
+\setbeamercolor*{author}{use=structure,fg=structure.bg}
+\setbeamercolor*{institute}{use=structure,fg=structure.bg}
+\setbeamercolor*{date}{use=structure,fg=structure.bg}
+\setbeamercolor*{palette primary}{use=structure,fg=white,bg=structure.fg}
+\setbeamercolor*{palette secondary}{use=structure,fg=white,bg=structure.bg}
+\setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=structure.fg}
+\setbeamercolor*{palette quaternary}{use=structure,fg=white}
+\setbeamercolor*{logo}{bg=white}
+
+%% For themes using the 'sidebar' outter theme (e.g. PaloAlto)
+\setbeamercolor*{sidebar}{parent=palette secondary}
+\setbeamercolor*{title in sidebar}{use=structure,fg=white}
+\setbeamercolor*{author in sidebar}{use=structure,fg=white}
+\setbeamercolor*{section in sidebar}{parent=pallete secondary}
+\setbeamercolor*{section in sidebar shaded}{use=structure,fg=structure.fg}
+\setbeamercolor*{subsection in sidebar}{use=structure,fg=white}
+\setbeamercolor*{subsection in sidebar shaded}{use=structure,fg=structure.fg}
+
+%% For themes using the dot ToC (e.g. Frankfurt)
+\setbeamercolor*{section in head/foot}{parent=palette secondary}
+\setbeamertemplate{section in head/foot shaded}{\color{rit-orange!75}\usebeamertemplate{section in head/foot}}
+
+\setbeamercolor*{frametitle}{parent=palette primary}
+\setbeamerfont{block title}{size={}}
+
+\AtBeginDocument{\fontsize{10}{14}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Convenient commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Add RIT logo, assuming they downloaded the logo
+\newcommand{\useritlogo}{\logo{\includegraphics[width=1.25cm]{rit_tiger_color_small}}}
+
+%% Orange bold-face command
+\newcommand{\head}[1]{\textcolor{rit-orange}{\textbf{#1}}}
+
+
+\mode
+<all>

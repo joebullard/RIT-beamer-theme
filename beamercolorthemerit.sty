@@ -1,0 +1,82 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Copyright 2015 Joe Bullard
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Rochester Institute of Technology color scheme
+%
+% This uses the official RIT colors in HTML code found at:
+%
+%       https://www.rit.edu/upub/graphic-standards
+%
+% To use with Beamer, place this file in the same directory as your slides
+% and add the following line AFTER your '\usetheme' command:
+%
+%       \usecolortheme{RIT}
+%
+% Alternatively, you could place this file in your Beamer theme directory,
+% which would be somewhere like
+%
+%       /use/share/texmf-dist/tex/latex/beamer/themes/color/
+%
+% or something similarly obnoxious.
+%
+%
+% NOTE:
+%
+% This color scheme was made with my personal favorite themes in mind, and
+% thus it may not look as nice in certain other themes (i.e. I may have
+% overlooked some color assignments). I believe it looks nice in
+%
+%     1. PaloAlto
+%     2. Frankfurt
+%     3. Madrid
+%
+% Feel free to modify anything you want.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mode<presentation>
+
+%% Official RIT colors from website
+\definecolor{rit-orange}{HTML}{F36E21}
+\definecolor{rit-brown}{HTML}{513127}
+
+\setbeamercolor{structure}{fg=rit-orange,bg=rit-brown}
+
+%% General colors
+\setbeamercolor*{normal text}{use=structure,fg=structure.bg,bg=white}
+\setbeamercolor*{title}{use=structure,fg=structure.fg}
+\setbeamercolor*{author}{use=structure,fg=structure.bg}
+\setbeamercolor*{institute}{use=structure,fg=structure.bg}
+\setbeamercolor*{date}{use=structure,fg=structure.bg}
+\setbeamercolor*{palette primary}{use=structure,fg=white,bg=structure.fg}
+\setbeamercolor*{palette secondary}{use=structure,fg=white,bg=structure.bg}
+\setbeamercolor*{palette tertiary}{use=structure,fg=white,bg=structure.fg}
+\setbeamercolor*{palette quaternary}{use=structure,fg=white}
+\setbeamercolor*{logo}{bg=white}
+
+%% For themes using the 'sidebar' outter theme (e.g. PaloAlto)
+\setbeamercolor*{sidebar}{parent=palette secondary}
+\setbeamercolor*{title in sidebar}{use=structure,fg=white}
+\setbeamercolor*{author in sidebar}{use=structure,fg=white}
+\setbeamercolor*{section in sidebar}{parent=pallete secondary}
+\setbeamercolor*{section in sidebar shaded}{use=structure,fg=structure.fg}
+\setbeamercolor*{subsection in sidebar}{use=structure,fg=white}
+\setbeamercolor*{subsection in sidebar shaded}{use=structure,fg=structure.fg}
+
+%% For themes using the dot ToC (e.g. Frankfurt)
+\setbeamercolor*{section in head/foot}{parent=palette secondary}
+\setbeamertemplate{section in head/foot shaded}{\color{rit-orange!75}\usebeamertemplate{section in head/foot}}
+
+\setbeamercolor*{frametitle}{parent=palette primary}
+\setbeamerfont{block title}{size={}}
+
+\mode
+<all>
