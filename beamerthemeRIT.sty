@@ -70,8 +70,12 @@
 %% Add RIT logo, assuming they downloaded the logo
 \newcommand{\useritlogo}{\logo{\includegraphics[width=1.25cm]{rit_tiger_color_small}}}
 
-%% Orange bold-face command
-\newcommand{\head}[1]{\textcolor{rit-orange}{\textbf{#1}}}
+%% Colors for highlighting
+\newcommand{\orange}[1]{{\color{rit-orange}#1}}
+\newcommand{\borange}[1]{\orange{\bf #1}}
+\newcommand{\brown}[1]{{\color{rit-brown} #1}}
+\newcommand{\bbrown}[1]{\brown{\bf #1}}
+
 
 %%
 % This is a hacky solution to making both the section AND subsection
