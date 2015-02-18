@@ -48,18 +48,14 @@
 \setbeamercolor*{palette quaternary}{use=structure,fg=white}
 \setbeamercolor*{logo}{bg=white}
 
-%% For themes using the 'sidebar' outter theme (e.g. PaloAlto)
+%% For themes using the 'sidebar' outer theme (e.g. PaloAlto)
 \setbeamercolor*{sidebar}{parent=palette secondary}
 \setbeamercolor*{title in sidebar}{use=structure,fg=white}
 \setbeamercolor*{author in sidebar}{use=structure,fg=white}
-\setbeamercolor*{section in sidebar}{parent=pallete secondary}
-\setbeamercolor*{section in sidebar shaded}{use=structure,fg=structure.fg}
+\setbeamercolor*{section in sidebar}{use=structure,fg=structure.fg}
+\setbeamercolor*{section in sidebar shaded}{use=structure,fg=structure.fg!75}
 \setbeamercolor*{subsection in sidebar}{use=structure,fg=white}
 \setbeamercolor*{subsection in sidebar shaded}{use=structure,fg=structure.fg!75}
-
-%% For themes using the dot ToC (e.g. Frankfurt)
-\setbeamercolor*{section in head/foot}{parent=palette secondary}
-\setbeamertemplate{section in head/foot shaded}{\color{rit-orange!75}\usebeamertemplate{section in head/foot}}
 
 \setbeamercolor*{frametitle}{parent=palette primary}
 \setbeamerfont{block title}{size={}}
@@ -77,6 +73,19 @@
 %% Orange bold-face command
 \newcommand{\head}[1]{\textcolor{rit-orange}{\textbf{#1}}}
 
+%%
+% This is a hacky solution to making both the section AND subsection
+% highlight on each slide. This code was taken from a StackExchange answer by
+% user 'diabonas', available at the following link
+%
+% http://tex.stackexchange.com/questions/64679/highlight-both-section-and-subsection-in-the-outline-on-the-side-of-a-beamer-sli
+%% 
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\insertverticalnavigation}%
+{\ifx\beamer@nav@css\beamer@hidetext{\usebeamertemplate{section in sidebar}}\else{\usebeamertemplate{section in sidebar shaded}}\fi}%
+{{\usebeamertemplate{section in sidebar}}}{}{}
+\makeatother
 
 \mode
 <all>
